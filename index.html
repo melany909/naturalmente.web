@@ -5,9 +5,56 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Naturalmente</title>
 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
         <link rel="stylesheet" href="styless.css">
     </head>
     <body>
+
+       <section class="login-screen">
+
+        <div class="login-box">
+
+            <h2>Ingresar</h2>
+
+            <div class="input-box">
+                <input type="text" placeholder="Usuario">
+            </div>
+
+            <div class="input-box">
+                <input type="password" placeholder="Contraseña">
+            </div>
+
+            <button class="login-btn">
+                Ingresar
+            </button>
+
+            <p class="register-text">
+                ¿No tienes unas cuenta?
+                <a href="#">Crear cuenta</a>
+            </p>
+        </div>
+
+        <div class="register-box">
+            <h2>Crear cuenta</h2>
+
+            <div class="input-box">
+                <input type="text" id="new-user" placeholder="Nuevo usuario">
+            </div>
+
+            <div class="input-box">
+                <input type="password" id="new-password" placeholder="Nueva contraseña">
+            </div>
+
+            <button class="register-btn">
+                Registrarse
+            </button>
+        </div>
+       </section> 
+
+       <div class="main-site">
 
         <section class="hero">
 
@@ -15,9 +62,98 @@
 
             <div class="hero-content">
                 <h1>Conectá tu espacio con la naruraleza</h1>
+
+            <p>
+                Decoración natural, lámparas de piedra y productos
+                pensados para transmitir armonía y bienestar.
+            </p>
+
+            <a href="#" class="btn">
+                Ver productos
+            </a>
             </div>
         </section>
 
+        <nav class="navbar">
+
+            <div class="logo">
+                Naturalmente
+            </div>
+
+            <ul class="nav-links">
+               <li><a href="#">Inicio</a></li> 
+               <li><a href="#">Productos</a></li>
+               <li><a href="#">Nosotros</a></li>
+               <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <section class="products">
+            <h2>Productos Destacados</h2>
+
+            <div class="product-container">
+
+                <div class="card hidden">
+                    <img src="https://decorexpro.com/images/article/orig/2017/11/solyanye-lampy-6.jpg" alt="">
+
+                    <h3>Lamparas de Sal</h3>
+
+                    <p>
+                        Decoración natural para crear espacios cálidos y relajantes.
+                    </p>
+                </div>
+
+                <div class="card hidden">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="">
+
+                    <h3>Piedras Naturales</h3>
+
+                    <p>
+                        Productos inspirados en la armonía de la naturaleza.
+                    </p>
+                </div>
+
+                <div class="card hidden">
+                    <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15" alt="">
+
+                    <h3>Velas & Aromas</h3>
+
+                    <p>
+                        Fragancias cálidas y velas pensadas para transmitir bienestar y armonía.
+                    </p>
+                </div>
+
+                <div class="card hidden">
+                    <img src="https://images.unsplash.com/photo-1494526585095-c41746248156" alt="">
+
+                    <h3>Cerámica & decoración</h3>
+
+                    <p>
+                        Piezas decorativas artesanales para crear espacios únicos y naturales.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="extra-products hidden">
+
+            <h2>También encontrá</h2>
+
+            <div class="extra-container">
+
+                <span>Perfumes para vehículos</span>
+                <span>Aromas textiles</span>
+                <span>Cerámica artesanal</span>
+                <span>Porcelana decorativa</span>
+                <span>Jaboneras</span>
+                <span>Mieleras</span>
+                <span>Bandejas decorativas</span>
+                <span>Carameleras</span>
+            </div>
+        </section>
+
+    
+            
 
 
 
@@ -42,7 +178,8 @@
 
 
 
-
+       </div>
         <script src="script.js"></script>
+
     </body>
 </html>
