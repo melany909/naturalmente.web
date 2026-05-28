@@ -28,8 +28,9 @@ const registerBox = document.querySelector('.register-box');
 
 const registerBtn = document.querySelector('.register-btn');
 
-let savedUser = "";
-let savedPassword = "";
+let savedUser = localStorage.getItem('user') || "";
+
+let savedPassword = localStorage.getItem('password') || "";
 
 registerLink.addEventListener('click', (e) => {
 
@@ -47,6 +48,10 @@ registerBtn.addEventListener('click', () => {
 
     savedPassword = document.querySelector('#new-password').value;
 
+    localStorage.setItem('user', savedUser);
+
+    localStorage.setItem('password', savedPassword);
+
     alert('Cuenta creada correctamente 😎');
 
     registerBox.style.display = 'none';
@@ -61,12 +66,7 @@ loginBtn.addEventListener('click', () => {
 
     const passInput = document.querySelector('.login-box input[type="password"]').value;
 
-    if(
-    userInput !== "" &&
-    passInput !== "" &&
-    userInput === savedUser &&
-    passInput === savedPassword
-){
+    if(userInput === savedUser && passInput === savedPassword){
 
         loginScreen.style.display = 'none';
 
@@ -74,7 +74,33 @@ loginBtn.addEventListener('click', () => {
 
     }else{
 
-        alert('Usuario o contraseña incorrectos 😥');
+        alert('Usuario o contraseña incorrectos 😭');
+
+    }
+
+});
+
+const productsLink = document.querySelector('#products-link');
+
+const productsSection = document.querySelector('.products-section');
+
+productsSection.style.display = 'none';
+
+productsLink.addEventListener('click', (e) => {
+
+    e.preventDefault();
+
+    if(productsSection.style.display === 'none'){
+
+        productsSection.style.display = 'block';
+
+        productsSection.scrollIntoView({
+            behavior: 'smooth'
+        });
+
+    }else{
+
+        productsSection.style.display = 'none';
 
     }
 
