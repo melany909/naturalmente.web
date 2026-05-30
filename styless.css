@@ -399,8 +399,18 @@ html{
     }
 
     .nav-links a{
-        font-size: 15px;
+    font-size: 14px;
+    background: rgba(255,255,255,0.15);
+    padding: 8px 14px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
     }
+
+    .nav-links a:hover{
+    background: #d8b08c;
+    color: white;
+}
 
     /* HERO */
     .hero{
@@ -421,14 +431,12 @@ html{
     .product-container{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-        padding: 10px;
+        gap: 12px;
     }
 
     .card{
         width: 100%;
-        max-width: 180px;
-        margin: auto;
+        max-width: none;
     }
 
     .card img{
