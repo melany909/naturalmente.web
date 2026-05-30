@@ -24,6 +24,11 @@ body{
     color: white;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
+
 .overlay {
     position: absolute;
     width: 100%;
@@ -374,99 +379,112 @@ body{
     background: #f5eadc;
 }
 
+
 @media (max-width: 768px){
 
-    .navbar{       /* Menu arriba */
+    /* MENU */
+    .navbar{
         padding: 15px;
     }
 
-    .nav-links{              /*Inicio, productos, nosotros, contacto, etc.. */
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 12px;
-        justify-content: center;
-        
+    .logo{
+        font-size: 22px;
     }
 
-.nav-links a{
-    font-size: 15px;
+    .nav-links{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .nav-links a{
+        font-size: 15px;
+    }
+
+    /* HERO */
+    .hero{
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .hero-content h1{
+        font-size: 2rem;
+    }
+
+    .hero-content p{
+        font-size: 0.95rem;
+        padding: 0 20px;
+    }
+
+    /* PRODUCTOS DESTACADOS */
+    .product-container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .card{
+        width: 100%;
+        max-width: 180px;
+        margin: auto;
+    }
+
+    .card img{
+        height: 140px;
+    }
+
+    .card h3{
+        font-size: 15px;
+        margin: 10px 0;
+    }
+
+    .card p{
+        font-size: 12px;
+        padding: 0 10px 15px;
+    }
+
+    /* TAMBIÉN ENCONTRÁ */
+    .extra-container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* LOGIN */
+    .login-box,
+    .register-box{
+        width: 90%;
+        padding: 30px 20px;
+    }
+
+    /* CATÁLOGO */
+    .catalog{
+        padding: 50px 20px;
+    }
+
+    .catalog h2{
+        font-size: 2rem;
+    }
+
+    .catalog-container{
+        grid-template-columns: 1fr;
+    }
+
+    .catalog-card img{
+        height: 180px;
+    }
+
+    .catalog-card h3{
+        font-size: 1.2rem;
+    }
+
+    .catalog-card p{
+        font-size: 0.95rem;
+    }
+
 }
 
-.hero-content h1{          /* Titulo inicio */
-    font-size: 2rem;
-
-}
-
-.hero-content p{            /* Descripcion debajo del titulo en inicio */
-    font-size: 0.95rem;
-    padding: 0 20px;
-}
-
-.product-container{
-    gap: 15px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    padding: 10px;
-}
-
-.card{
-    width: 100%;
-}
-
-.card img{
-    height: 120px;
-}
-
-.card h3{
-    font-size: 15px;
-    margin: 10px 0;
-}
-
-.card p{
-    font-size: 12px;
-    padding: 0 10px 15px;
-}
-
-.extra-container{
-    flex-direction: column;
-    align-items: center;
-}
-
-.login-box,
-.register-box{
-    width: 90%;
-    padding: 30px 20px;
-}
-
-.hero{
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.catalog{
-    padding: 50px 20px;
-}
-
-.catalog h2{
-    font-size: 2rem;
-}
-
-.catalog-container{
-    grid-template-columns: 1fr;
-}
-
-.catalog-card img{
-    height: 180px;
-}
-
-.catalog-card h3{
-    font-size: 1.2rem;
-}
-
-.catalog-card p{
-    font-size: 0.95rem;
-}
-}
 
 .catalog {
     padding: 80px 10%;
