@@ -531,3 +531,24 @@ body{
 .catalog-btn:hover{
     background: #6f3d89;
 }
+
+#error-login{
+    color: #ffb3b3;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+#showPassword{
+    background: transparent;
+    display: block;
+    border: none;
+    color: #f3d2b5;
+    font-size: 15px;
+    cursor: pointer;
+    margin: 10px auto 20px auto;
+    transition: 0.3s;
+}
+
+#showPassword:hover{
+    color: white;
+}

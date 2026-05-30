@@ -74,7 +74,7 @@ loginBtn.addEventListener('click', () => {
 
     }else{
 
-        alert('Usuario o contraseña incorrectos 😭');
+        document.getElementById('error-login').textContent = 'Usuario o contraseña incorrectos 😭';
 
     }
 
@@ -102,6 +102,19 @@ productsLink.addEventListener('click', (e) => {
 
         productsSection.style.display = 'none';
 
+    }
+
+});
+
+const showPassword = document.getElementById('showPassword');
+const password = document.getElementById('password');
+
+showPassword.addEventListener('click', () => {
+
+    if(password.type === 'password'){
+        password.type = 'text';
+    }else{
+        password.type = 'password';
     }
 
 });
