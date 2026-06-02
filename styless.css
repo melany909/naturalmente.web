@@ -85,9 +85,8 @@ html{
 
 /*MENU DE NAVEGACION (NATURALMENTE, INICIO, PRODUCTOS, NOSOTROS)*/
 .navbar {
-    position: absolute;
-
-    top:0;
+    position: fixed;
+    top: 0;
     left: 0;
 
     width: 100%;
@@ -96,16 +95,20 @@ html{
     justify-content: space-between;
     align-items: center;
 
-    padding: 25px 60px;
+    padding: 8px 25px;
 
-    z-index: 10;
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+
+    z-index: 999;
 }
 
 .logo {
     font-size: 28px;
     font-weight: bold;
-
-    color: white;
+    color: #572d6e;
 }
 
 .nav-links {
@@ -118,9 +121,10 @@ html{
 }
 
 .nav-links a{
-    color: white;
+   color: #572d6e;
     text-decoration: none;
     font-size: 18px;
+    font-weight: 600;
     transition: 0.3s;
 }
 
@@ -420,19 +424,19 @@ html{
 
     /* MENU */
     .navbar{
-        padding: 15px;
+        padding: 10px;
     }
 
     .logo{
-        font-size: 22px;
+        font-size: 18px;
     }
 
     .nav-links{
+        display:flex;
         flex-direction: row;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         justify-content: center;
-        gap: 18px;
-        margin-top: 15px;
+        gap: 8px;
     }
 
     .nav-links li{
@@ -440,16 +444,13 @@ html{
     }
 
     .nav-links a{
-    font-size: 14px;
-    background: rgba(255,255,255,0.15);
-    padding: 10px 18px;
-    border-radius: 25px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.2);
+     background: #f3e6f7;
+    color: #572d6e;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
 
-    display:inline-block;
-    min-width: 90px;
-    text-align: center;
     }
 
     .nav-links a:hover{
