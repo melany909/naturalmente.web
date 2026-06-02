@@ -1,3 +1,5 @@
+/* ---------- ANIMACIONES ---------- */
+
 const hiddenElements = document.querySelectorAll('.hidden');
 
 const observer = new IntersectionObserver((entries) => {
@@ -14,6 +16,8 @@ const observer = new IntersectionObserver((entries) => {
 
 hiddenElements.forEach((el) => observer.observe(el));
 
+/* ---------- LOGIN Y REGISTRO ---------- */
+
 const loginBtn = document.querySelector('.login-btn');
 const loginScreen = document.querySelector('.login-screen');
 const mainSite = document.querySelector('.main-site');
@@ -26,8 +30,6 @@ const registerBtn = document.querySelector('.register-btn');
 let savedUser = localStorage.getItem('user') || "";
 let savedPassword = localStorage.getItem('password') || "";
 
-/* ---------- CREAR CUENTA ---------- */
-
 registerLink.addEventListener('click', (e) => {
 
     e.preventDefault();
@@ -39,12 +41,14 @@ registerLink.addEventListener('click', (e) => {
 
 registerBtn.addEventListener('click', () => {
 
-    savedUser = document.querySelector('#new-user').value;
-    savedPassword = document.querySelector('#new-password').value;
+    savedUser = document.getElementById('new-user').value;
+    savedPassword = document.getElementById('new-password').value;
 
-    if(savedUser === "" || savedPassword === ""){
+    if (savedUser === "" || savedPassword === "") {
+
         alert('Completa todos los campos');
         return;
+
     }
 
     localStorage.setItem('user', savedUser);
@@ -57,55 +61,95 @@ registerBtn.addEventListener('click', () => {
 
 });
 
-/* ---------- LOGIN ---------- */
-
 loginBtn.addEventListener('click', () => {
 
     const userInput = document.querySelector('.login-box input[type="text"]').value;
-    const passInput = document.querySelector('.login-box input[type="password"]').value;
+    const passInput = document.getElementById('password').value;
 
-    if(userInput === savedUser && passInput === savedPassword){
+    if (userInput === savedUser && passInput === savedPassword) {
 
         loginScreen.style.display = 'none';
         mainSite.style.display = 'block';
 
-    }else{
+    } else {
 
         document.getElementById('error-login').textContent =
-        'Usuario o contraseña incorrectos';
+            'Usuario o contraseña incorrectos';
 
     }
 
 });
 
-/* ---------- MOSTRAR / OCULTAR PRODUCTOS ---------- */
+/* ---------- MOSTRAR CONTRASEÑA ---------- */
 
+const showPassword = document.getElementById('showPassword');
+const password = document.getElementById('password');
+
+showPassword.addEventListener('click', () => {
+
+    if (password.type === 'password') {
+
+        password.type = 'text';
+        showPassword.textContent = '🙈 Ocultar contraseña';
+
+    } else {
+
+        password.type = 'password';
+        showPassword.textContent = '👁 Ver contraseña';
+
+    }
+
+});
+
+/* ---------- NAVEGACIÓN ---------- */
+
+const inicioLink = document.getElementById('inicio-link');
 const productsLink = document.getElementById('products-link');
+const aboutLink = document.getElementById('about-link');
+const contactLink = document.getElementById('contact-link');
+
+const hero = document.getElementById('inicio');
 const productsSection = document.querySelector('.products-section');
+const aboutSection = document.getElementById('about');
+const contactSection = document.getElementById('contact');
 
 productsSection.style.display = 'none';
+aboutSection.style.display = 'none';
+contactSection.style.display = 'none';
+
+/* INICIO */
+
+if(inicioLink){
+
+    inicioLink.addEventListener('click', (e) => {
+
+        e.preventDefault();
+
+        hero.style.display = 'flex';
+
+        productsSection.style.display = 'none';
+        aboutSection.style.display = 'none';
+        contactSection.style.display = 'none';
+
+    });
+
+}
+
+/* PRODUCTOS */
 
 productsLink.addEventListener('click', (e) => {
 
     e.preventDefault();
 
-    if(productsSection.style.display === 'none'){
+    hero.style.display = 'none';
 
-        productsSection.style.display = 'block';
-
-        productsSection.scrollIntoView({
-            behavior: 'smooth'
-        });
-
-    }else{
-
-        productsSection.style.display = 'none';
-
-    }
+    productsSection.style.display = 'block';
+    aboutSection.style.display = 'none';
+    contactSection.style.display = 'none';
 
 });
 
-/* ---------- BOTÓN VER PRODUCTOS ---------- */
+/* BOTÓN VER PRODUCTOS */
 
 const heroProducts = document.getElementById('hero-products');
 
@@ -115,33 +159,40 @@ if(heroProducts){
 
         e.preventDefault();
 
-        productsSection.style.display = 'block';
+        hero.style.display = 'none';
 
-        productsSection.scrollIntoView({
-            behavior: 'smooth'
-        });
+        productsSection.style.display = 'block';
+        aboutSection.style.display = 'none';
+        contactSection.style.display = 'none';
 
     });
 
 }
 
-/* ---------- VER CONTRASEÑA ---------- */
+/* NOSOTROS */
 
-const showPassword = document.getElementById('showPassword');
-const password = document.getElementById('password');
+aboutLink.addEventListener('click', (e) => {
 
-showPassword.addEventListener('click', () => {
+    e.preventDefault();
 
-    if(password.type === 'password'){
+    hero.style.display = 'none';
 
-        password.type = 'text';
-        showPassword.textContent = '🙈 Ocultar contraseña';
+    productsSection.style.display = 'none';
+    aboutSection.style.display = 'block';
+    contactSection.style.display = 'none';
 
-    }else{
+});
 
-        password.type = 'password';
-        showPassword.textContent = '👁 Ver contraseña';
+/* CONTACTO */
 
-    }
+contactLink.addEventListener('click', (e) => {
+
+    e.preventDefault();
+
+    hero.style.display = 'none';
+
+    productsSection.style.display = 'none';
+    aboutSection.style.display = 'none';
+    contactSection.style.display = 'block';
 
 });
